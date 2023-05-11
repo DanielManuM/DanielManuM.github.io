@@ -34,14 +34,15 @@
 }
 
 body{
-    background-color: bisque;
-    color: rgb(4, 11, 104);
+    background-color: rgb(255, 255, 255);
+    color: rgb(202, 255, 226);
 
-    font-family: "Comic Sans MS", "Times New Roman", Impact, cursive;
+    font-family: Arial, cursive;
     font-size: 1rem;
     
 
 }
+
 
 .box-1{
     background-color: rgba(255,255,255, 0.2);
@@ -60,6 +61,7 @@ body{
 .container{
     width: 80vw;
     margin: auto;
+    background-image: url('images/background.jpg');
 }
 
 .centre {
@@ -71,8 +73,15 @@ body{
 footer h4{
     font-weight: bolder;
     font-style: italic;
-    text-decoration: underline;
+    color: rgb(202, 255, 226);
     text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.links {
+    font-weight: bolder;
+    font-size: large;
+    color: rgb(202, 255, 226);
     font-size: 1.5rem;
 }
 
@@ -90,10 +99,11 @@ label[for = "search"]{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 15vm;
+    gap: 15rem;
 }
 
 .felx-container{
     list-style: none;
     padding: 2px;
 }
+

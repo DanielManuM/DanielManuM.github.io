@@ -51,7 +51,6 @@ class balloon {
         document.getElementById("score").innerHTML = score
         this.col = color(156)
 
-        popSfx.play()
         }
     }
 }

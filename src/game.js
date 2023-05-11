@@ -8,8 +8,6 @@ const balloons = []
 
 let score = 0
 
-let popSfx
-
 // testBalloon.label = "Try it"
 // testBalloon.x = 100
 // testBalloon.y = 50
@@ -31,10 +29,7 @@ function greeting(){
     gameTitle.innerHTML = gameTitleText
 }
 
-function preload() {
-    soundFormats("wav")
-    popSfx = loadSound("./pop") //pop location
-}
+
 
 function setup() {
     //creates canvas object and attaches it to specified container
@@ -66,6 +61,7 @@ function youWin(){
     noLoop()
 
     let para = document.createElement("p")
+    para.id = "winMessage"
     para.style.fontSize = "64px"
     let textNode = document.createTextNode("You win")
     para.appendChild(textNode)
@@ -74,4 +70,28 @@ function youWin(){
 
     let canvas = document.querySelector("#game-container canvas")
     canvas.remove()
+}
+
+
+
+function reset(){
+    document.getElementById("score").innerHTML = 0
+    score = 0
+    balloons.length = 0
+    
+    let canvas = createCanvas(640, 480)
+    canvas.parent("game-container")
+
+    for(let i = 0; i < BALLOON_TOTAL; i++){
+    balloons.push(new balloon(random(width), random(height), 33, color(random(255),random(255),random(255))))
+    }
+
+    StopWinning()
+}
+
+function StopWinning(){
+    let winMessage = document.getElementById("winMessage")
+    if (winMessage){
+        winMessage.remove()
+    }
 }
