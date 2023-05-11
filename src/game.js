@@ -4,7 +4,7 @@ let developer = "Daniel Manu"
 
 const BALLOON_TOTAL = 20
 
-const balloons = []
+let balloons = []
 
 let score = 0
 
@@ -77,16 +77,13 @@ function youWin(){
 function reset(){
     document.getElementById("score").innerHTML = 0
     score = 0
-    balloons.length = 0
+    balloons = []
     
-    let canvas = createCanvas(640, 480)
-    canvas.parent("game-container")
-
-    for(let i = 0; i < BALLOON_TOTAL; i++){
-    balloons.push(new balloon(random(width), random(height), 33, color(random(255),random(255),random(255))))
-    }
+    setup()
 
     StopWinning()
+
+    loop()
 }
 
 function StopWinning(){
